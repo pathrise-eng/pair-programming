@@ -13,6 +13,7 @@ can_make_note('i want to make this note', magazines)
 can_make_note('zebra', magazines)
 # returns -1
 
+https://docs.google.com/document/d/113HXtj0QuApxfihcvf0ixT-baJEuW4Mkd8sMEv3EOlQ/edit
 
 '''
 from collections import Counter
