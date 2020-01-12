@@ -42,16 +42,20 @@ Below is as documented of a process for doing Pair Programming sessions as I cou
 * I set a timer for 30 min and leave them alone
 
 ## What To Do During A Pair Programming Session - Solutions (15 min total)
+* **START RECORDING THE VIDEO**
 * After 30 min are up I ask if anyone has solved the problem, if yes I have them walk through their solution
 * People are usually eager to share so if anyone wants to share any part of what they have I let them during this time
 * I leave 5 min to discuss my saved solution from earlier if I feel I need to still explain anything or if I think anyone may still be confused on the problem
 * I end the session and thank everyone for coming
 
-## What To Do After A Pair Programming Session - Solutions (30 min total)
+## What To Do After A Pair Programming Session - Clean Up (30 min total)
 * This script is currently saved in a REPL [here](https://repl.it/repls/EmbarrassedMedicalSeahorse) for me to be able to easily execute from any machine - it gives me fresh hackerpair links when run
 * Erase all the names and the used hackerpair links from the hackerpair sheet
 * Replace the hackerpair links with new ones from the above script
 * **NOTE** It's much preferred to create new hackerpair sessions each time rather than going into them and just deleting the code. This is because a) it saves the chat history of fellows and we shouldn't really be letting other fellows see that and b) it looks cleaner and is easy to miss plus c) if you have more than like 3 links to clear it's faster to run the script 
+* Upload the video we recorded to contentful
+* Send follow up email with link to contentful content
+
 
 ## Languages Used
 
