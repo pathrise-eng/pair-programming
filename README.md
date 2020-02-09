@@ -14,7 +14,20 @@ Below is as documented of a process for doing Pair Programming sessions as I cou
   * Going to leetcode and filtering questions by tags (looking for POPULAR questions that have high frequency)
   * The reason for looking at the tags is to make sure I don't always end up picking a question with the same answer type (I found that I was doing a lot of DFS questions because that's an answer for a lot of leetcode mediums)
   * I ensure that I have a solution that I understand. Sometimes I write it myself, sometimes I just find a decent one that someone wrote in the discussion section on leetcode.
-  * Go to the pair programming question folder, copy a doc that has a previous question, and edit the copy to contain a new question
+  * Create a Contentful Guide and publish the question. For consistency, please follow this format:
+   * Title is "Pair Programming: <name of leetcode question>"
+   * Cohort Id is "JAN17A", make sure you press the enter key here to add it otherise it'll complain
+   * Standalone workshop is "Yes"
+   * Workshop duration (15-20ish minutes. We only record the solution, which is talked about in the last 15ish min)
+   * Industry Track is "swe"
+   * Job Search Stage is "Interviewing"
+   * Recording URL: YOU MUST PLACE A DUMMY URL HERE to publish the content, we'll correct it later, for now use any google meets recording, although I suggest this dummy one that I made for this specifically: https://fellows.pathrise.com/knowledge/workshops/pair-programming-word-search
+   * (Override) SWE Workshop Description is where you put the leetcode question. Make sure you use this field description and not another one, since they don't all support markdown
+   * Feature is "No" because we don't want it crowding out other content
+   * Listed is "Yes" so the fellows can see it 
+   * Tags are subjective, but think of them like leetcode tags and add whatever is appropriate i.e. DFS, BFS, recursion, etc
+   * IMPORTANT: make sure you set "Hide Tags" to "Yes" or else fellows can see what the solution is before you present it
+   * Publish the link as it is, we'll add the solution and the real recording link after the session
   * Go to the [pair programming hackerpair worksheet](https://docs.google.com/spreadsheets/d/1s5CFJVw-wMcHUDaSYzeD6npqdC-2mUJhBlR4atHR7Ks/edit#gid=0) and wipe the names off the excel sheet and reset the hackerpair links if needed (details on how to do so are below in another section)
   
 
@@ -53,7 +66,8 @@ Below is as documented of a process for doing Pair Programming sessions as I cou
 * Erase all the names and the used hackerpair links from the hackerpair sheet
 * Replace the hackerpair links with new ones from the above script
 * **NOTE** It's much preferred to create new hackerpair sessions each time rather than going into them and just deleting the code. This is because a) it saves the chat history of fellows and we shouldn't really be letting other fellows see that and b) it looks cleaner and is easy to miss plus c) if you have more than like 3 links to clear it's faster to run the script 
-* Upload the video we recorded to contentful
+* Upload the video we recorded to contentful and replace it with the dummy link we added earlier
+* Add in the solution to the contentful and republish everything
 * Send follow up email with link to contentful content
 
 
