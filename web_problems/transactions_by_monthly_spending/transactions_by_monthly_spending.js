@@ -6,7 +6,7 @@ async function getUserTransaction(uid, txnType, monthYear) {
     let url = `https://jsonmock.hackerrank.com/api/transactions/search?userId=${uid}&txnType=${txnType}`;
 
     // retrieve all transactions
-    const results = await paginationHelper(url, request);
+    const results = await getUserTransactions(url, request);
 
     // filter out transactions list and only contain transactions in given monthYear
     let monthlyTransactions = await getMonthlyTransactions(results, monthYear);
@@ -20,13 +20,13 @@ async function getUserTransaction(uid, txnType, monthYear) {
         return [-1];
     }
 
-    //sort valid transactions in increasing order
+    // sort valid transactions in increasing order
     const sortedIds = idsTransactionsGreaterThanAvg.sort((a, b) => a - b);
     return sortedIds;
 }
 
-//retrieve transactions on all pages
-async function paginationHelper(url,fn, currPageNumber = 1) {
+// retrieve transactions on all pages
+async function getUserTransactions(url, fn, currPageNumber = 1) {
     let response = null;
     let results = [];
     let totalResults = 0;
@@ -34,11 +34,12 @@ async function paginationHelper(url,fn, currPageNumber = 1) {
     do {
         response = await fn(url, currPageNumber);
         totalPages = Number(response.total_pages);
-        currPageNumber = Number(response.page)+1;
+        currPageNumber = Number(response.page) + 1;
         for(let transaction of response.data){
             results.push(transaction);
         }
-    } while(currPageNumber <= totalPages);
+    } while (currPageNumber <= totalPages);
+
     return results;
 }
 
@@ -56,10 +57,9 @@ async function request(url, currPageNumber=1) {
             });
         }).on('error', err => reject(err))
     });
-
 }
 
-//find transactions that have transaction amount > monthly averge spent
+// find transactions that have transaction amount > monthly averge spent
 async function getTransactionsGreaterThanAvg(monthlyAvgSpending, monthlyTransactions) {
     let transactions = [];
     for(let monthlyTransaction of monthlyTransactions) {
@@ -71,7 +71,7 @@ async function getTransactionsGreaterThanAvg(monthlyAvgSpending, monthlyTransact
     return transactions;
 }
 
-//convert transaction amount from string to number
+// convert transaction amount from string to number
 async function convertAmountToNumber(stringAmount) {
     let amount = stringAmount.split('');
     amount.splice(0,1);
@@ -81,7 +81,7 @@ async function convertAmountToNumber(stringAmount) {
     return amount;
 }
 
-//calculate average monthly spent
+// calculate average monthly spent
 async function avgAmountSpent(monthlyDebitTransactions) {
     let amounts = [];
     let total = 0;
@@ -91,11 +91,11 @@ async function avgAmountSpent(monthlyDebitTransactions) {
     for(let amount of amounts) {
         total = total + amount; 
     }
-    const avg = total/amounts.length;
+    const avg = total / amounts.length;
     return avg;
 }
 
-//filter out transactions list and only contain transactions in given monthYear 
+// filter out transactions list and only contain transactions in given monthYear 
 async function getMonthlyTransactions(results, monthYear) {
     let monthlyTransactions = [];
     for (let result of results) {
@@ -104,7 +104,7 @@ async function getMonthlyTransactions(results, monthYear) {
         resultDate = resultDate.split('-');
         resultDate.pop();
         const monthYearDate = resultDate[1] + '-' + resultDate[0];
-        if(monthYearDate===monthYear) {
+        if(monthYearDate === monthYear) {
             monthlyTransactions.push(result);
         }
     }
